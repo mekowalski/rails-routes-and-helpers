@@ -1,0 +1,7 @@
+RAILS ROUTER
+  -purpose is to recognize URLs then dispatch them to a controllers actions
+  -possibly to a Rack application is needed
+  -also can generate paths and URLs avoiding hard-coded strings into views(helpers)
+
+  -Routers take in all requests, send them back and forth to get to the correct place in the code
+  -Helps with the traffic control of app
