@@ -9,6 +9,7 @@ RAILS ROUTER
   get '/teacher/:id', to: 'teachers#show', as: 'teacher'
   ^^ singular, straight forward way to create route, where to go & how to get there
 
+
 RESOURCES
   -Resource is a singular presence to CRUD
   -Resources is a plural presence to handle incoming generic posts with CRUD and index
@@ -26,3 +27,18 @@ edit_student GET    /students/:id/edit(.:format) students#edit
              PATCH  /students/:id(.:format)      students#update
              PUT    /students/:id(.:format)      students#update
              DELETE /students/:id(.:format)      students#destroy
+
+  -can define multiple resources at the same time(either way will work)
+    resources :students, :teachers, :schools
+    resources :teachers
+    resources :schools
+
+
+PATH & URL HELPERS
+  -mostly used in/defined with specific prefix with a path attribute tagged after it
+  eg: same
+  students_path
+  /students
+
+  edit_student_path('12')
+  /students/12/edit
