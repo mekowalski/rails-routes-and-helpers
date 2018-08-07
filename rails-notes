@@ -10,7 +10,10 @@ RAILS ROUTER
   ^^ singular, straight forward way to create route, where to go & how to get there
 
 RESOURCES
+  -Resource is a singular presence to CRUD
+  -Resources is a plural presence to handle incoming generic posts with CRUD and index
   -resource routings declares are the coming routes for a given resourceful controller
+  -CRUD routes and all the necessary routes for application
   eg:
   1. resources :students
   2. rake routes

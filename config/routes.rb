@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
+  resource :teachers
   resources :students
-
-  get '/teacher/:id', to: 'teachers#show', as: 'teacher'
 end
