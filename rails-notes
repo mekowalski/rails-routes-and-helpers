@@ -5,3 +5,21 @@ RAILS ROUTER
 
   -Routers take in all requests, send them back and forth to get to the correct place in the code
   -Helps with the traffic control of app
+
+  get '/teacher/:id', to: 'teachers#show', as: 'teacher'
+  ^^ singular, straight forward way to create route, where to go & how to get there
+
+RESOURCES
+  -resource routings declares are the coming routes for a given resourceful controller
+  eg:
+  1. resources :students
+  2. rake routes
+  3.  Prefix Verb   URI Pattern                  Controller#Action
+    students GET    /students(.:format)          students#index
+             POST   /students(.:format)          students#create
+ new_student GET    /students/new(.:format)      students#new
+edit_student GET    /students/:id/edit(.:format) students#edit
+     student GET    /students/:id(.:format)      students#show
+             PATCH  /students/:id(.:format)      students#update
+             PUT    /students/:id(.:format)      students#update
+             DELETE /students/:id(.:format)      students#destroy
