@@ -42,3 +42,30 @@ PATH & URL HELPERS
 
   edit_student_path('12')
   /students/12/edit
+
+
+DEFINE NAMESPACES IN ROUTING
+  -organize groups of controllers under a namespace
+  eg:
+  1.  app/controllers/admin/
+      namespace :admin do
+        resources: articles, :comments
+      end
+  2. rake routes
+  3.        Prefix Verb   URI Pattern                        Controller#Action
+    admin_articles GET    /admin/articles(.:format)          admin/articles#index
+                   POST   /admin/articles(.:format)          admin/articles#create
+ new_admin_article GET    /admin/articles/new(.:format)      admin/articles#new
+edit_admin_article GET    /admin/articles/:id/edit(.:format) admin/articles#edit
+     admin_article GET    /admin/articles/:id(.:format)      admin/articles#show
+                   PATCH  /admin/articles/:id(.:format)      admin/articles#update
+                   PUT    /admin/articles/:id(.:format)      admin/articles#update
+                   DELETE /admin/articles/:id(.:format)      admin/articles#destroy
+    admin_comments GET    /admin/comments(.:format)          admin/comments#index
+                   POST   /admin/comments(.:format)          admin/comments#create
+ new_admin_comment GET    /admin/comments/new(.:format)      admin/comments#new
+edit_admin_comment GET    /admin/comments/:id/edit(.:format) admin/comments#edit
+     admin_comment GET    /admin/comments/:id(.:format)      admin/comments#show
+                   PATCH  /admin/comments/:id(.:format)      admin/comments#update
+                   PUT    /admin/comments/:id(.:format)      admin/comments#update
+                   DELETE /admin/comments/:id(.:format)      admin/comments#destroy
