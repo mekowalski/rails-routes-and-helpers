@@ -88,3 +88,9 @@ SCOPE MODULE
                    PATCH  /articles/:id(.:format)            admin/articles#update
                    PUT    /articles/:id(.:format)            admin/articles#update
                    DELETE /articles/:id(.:format)            admin/articles#destroy
+
+
+HOW TO USE A NAMESPACE CONTROLLER
+  -add the namespace in the controller folder
+  -directory: controllers/admin/articles_controller.rb
+  *see ^^^this file for reference*
