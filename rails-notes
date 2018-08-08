@@ -69,3 +69,20 @@ edit_admin_comment GET    /admin/comments/:id/edit(.:format) admin/comments#edit
                    PATCH  /admin/comments/:id(.:format)      admin/comments#update
                    PUT    /admin/comments/:id(.:format)      admin/comments#update
                    DELETE /admin/comments/:id(.:format)      admin/comments#destroy
+
+
+SCOPE MODULE
+  -route without a certain namespace prefix
+  eg:
+  1.scope module: 'admin' do
+      resources :articles
+    end
+  2. rake routes
+  3.      articles GET    /articles(.:format)                admin/articles#index
+                   POST   /articles(.:format)                admin/articles#create
+       new_article GET    /articles/new(.:format)            admin/articles#new
+      edit_article GET    /articles/:id/edit(.:format)       admin/articles#edit
+           article GET    /articles/:id(.:format)            admin/articles#show
+                   PATCH  /articles/:id(.:format)            admin/articles#update
+                   PUT    /articles/:id(.:format)            admin/articles#update
+                   DELETE /articles/:id(.:format)            admin/articles#destroy

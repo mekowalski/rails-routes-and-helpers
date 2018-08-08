@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :articles, :comments
   end
+
+  scope module: 'admin' do
+    resources :articles
+  end
 end
