@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   scope module: 'admin' do
     resources :articles
   end
+
+  #same
+  #resources :articles, module 'admin'
 end

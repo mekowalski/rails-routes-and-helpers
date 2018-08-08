@@ -77,6 +77,8 @@ SCOPE MODULE
   1.scope module: 'admin' do
       resources :articles
     end
+    *same*
+    resources :articles, module 'admin'
   2. rake routes
   3.      articles GET    /articles(.:format)                admin/articles#index
                    POST   /articles(.:format)                admin/articles#create
