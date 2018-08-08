@@ -10,4 +10,12 @@ Rails.application.routes.draw do
 
   #same
   #resources :articles, module 'admin'
+
+
+  #NESTED RESOURCES
+  #School has_many Teachers, Teachers has_many Students etc
+  #/school/1/teachers/
+  resources :schools do
+    resources :teachers
+  end
 end

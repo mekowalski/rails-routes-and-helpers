@@ -1,0 +1,30 @@
+NESTED RESOURCES
+  -when you have a belongs_to association
+  -nested route should allow that relationship in the routing
+  eg: Model
+  School has_many Teachers, Teachers has_many Students etc
+  /school/1/teachers/
+
+  1.resources :schools do
+      resources :teachers
+    end
+  2. rake routes
+  3.  Prefix        Verb   URI Pattern                                     Controller#Action
+    school_teachers GET    /schools/:school_id/teachers(.:format)          teachers#index
+                    POST   /schools/:school_id/teachers(.:format)          teachers#create
+ new_school_teacher GET    /schools/:school_id/teachers/new(.:format)      teachers#new
+edit_school_teacher GET    /schools/:school_id/teachers/:id/edit(.:format) teachers#edit
+     school_teacher GET    /schools/:school_id/teachers/:id(.:format)      teachers#show
+                    PATCH  /schools/:school_id/teachers/:id(.:format)      teachers#update
+                    PUT    /schools/:school_id/teachers/:id(.:format)      teachers#update
+                    DELETE /schools/:school_id/teachers/:id(.:format)      teachers#destroy
+            schools GET    /schools(.:format)                              schools#index
+                    POST   /schools(.:format)                              schools#create
+         new_school GET    /schools/new(.:format)                          schools#new
+        edit_school GET    /schools/:id/edit(.:format)                     schools#edit
+             school GET    /schools/:id(.:format)                          schools#show
+                    PATCH  /schools/:id(.:format)                          schools#update
+                    PUT    /schools/:id(.:format)                          schools#update
+                    DELETE /schools/:id(.:format)                          schools#destroy
+
+  
