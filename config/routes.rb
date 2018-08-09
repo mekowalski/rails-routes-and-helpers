@@ -41,10 +41,14 @@ Rails.application.routes.draw do
 
 
   #ADD ROUTE TO COLLECTION
-  resources :schools do
-    collection do
-      get 'search'
-    end
-  end
+  # resources :schools do
+  #   collection do
+  #     get 'search'
+  #   end
+  # end
 
+  #same just trimmed
+  resources :schools do
+    get 'search', on: :collection
+  end
 end

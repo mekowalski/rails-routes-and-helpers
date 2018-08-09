@@ -36,3 +36,8 @@ ADD ROUTE TO COLLECTION
 search_schools GET    /schools/search(.:format)   schools#search    *added search route*
        schools GET    /schools(.:format)          schools#index     *below are the 7 routes*
                POST   /schools(.:format)          schools#create
+
+-same just trimmed
+resources :schools do
+  get 'search', on: :collection
+end
