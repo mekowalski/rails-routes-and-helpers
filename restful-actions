@@ -1,0 +1,5 @@
+RESTFUL ACTIONS
+-This is good to know is a possibility when Rails seems to restrict or confine
+-add more restful actions
+-not confined to the 7 routes that is created by default
+-add additional routes applying to collection or individual memmbers of collection

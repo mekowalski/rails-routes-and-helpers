@@ -20,10 +20,18 @@ Rails.application.routes.draw do
   # end
   # resources :teachers, only: %w[show edit update destroy]
 
-  concern :commentable do
-    resources :comments
+  # concern :commentable do
+  #   resources :comments
+  # end
+  #
+  # resources :messages, concerns: :commentable
+
+
+  #RESTFUL ACTIONS
+  resources :schools do
+    member do
+      get 'preview'
+    end
   end
-
-  resources :messages, concerns: :commentable
-
+  
 end
