@@ -27,4 +27,15 @@ edit_school_teacher GET    /schools/:school_id/teachers/:id/edit(.:format) teach
                     PUT    /schools/:id(.:format)                          schools#update
                     DELETE /schools/:id(.:format)                          schools#destroy
 
-  
+-Can nest resources as deep as you want, but it gets a little out of hand
+-controllers#actions are still simple and nice though
+-They become difficult to work with and cumbersome
+eg:
+    Prefix: edit_school_teacher_student
+    Verb: GET
+    URI Pattern: /schools/:school_id/teachers/:teacher_id/students/:id/edit(.:format)
+    Controller#Action: students#edit
+
+
+*RAILS WAY*
+Resources should never be more than one level deep

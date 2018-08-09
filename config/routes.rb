@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   #School has_many Teachers, Teachers has_many Students etc
   #/school/1/teachers/
   resources :schools do
-    resources :teachers
+    resources :teachers do
+      resources :students
+    end
   end
 end
