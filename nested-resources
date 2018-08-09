@@ -38,4 +38,24 @@ eg:
 
 
 *RAILS WAY*
-Resources should never be more than one level deep
+-Resources should never be more than one level deep
+
+-To avoid deep nesting for when you actually want to nest some things
+-generate a collection of actions scoped under the parent, not for hierarchy but to nest member actions
+eg:
+  %w is another way of saying array, same as [:index, :new, :create]
+  1.resources :schools do
+      resources :teachers, only: %w[index new create]
+    end
+    resources :teachers, only: %w[show edit update destroy]
+  2. rake routes | grep teachers
+  3.
+   school_teachers GET    /schools/:school_id/teachers(.:format)     teachers#index
+                   POST   /schools/:school_id/teachers(.:format)     teachers#create
+new_school_teacher GET    /schools/:school_id/teachers/new(.:format) teachers#new
+      edit_teacher GET    /teachers/:id/edit(.:format)               teachers#edit
+           teacher GET    /teachers/:id(.:format)                    teachers#show
+                   PATCH  /teachers/:id(.:format)                    teachers#update
+                   PUT    /teachers/:id(.:format)                    teachers#update
+                   DELETE /teachers/:id(.:format)                    teachers#destroy
+    *some nested and some shallow nested*

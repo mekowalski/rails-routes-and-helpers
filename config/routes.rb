@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   #School has_many Teachers, Teachers has_many Students etc
   #/school/1/teachers/
   resources :schools do
-    resources :teachers do
-      resources :students
-    end
+    resources :teachers, only: %w[index new create]
   end
+  resources :teachers, only: %w[show edit update destroy]
+
 end
