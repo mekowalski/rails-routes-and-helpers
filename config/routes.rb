@@ -33,5 +33,10 @@ Rails.application.routes.draw do
       get 'preview'
     end
   end
-  
+
+  #same but different format
+  # resources :schools do
+  #   get 'preview', on: :member
+  # end
+
 end

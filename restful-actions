@@ -2,4 +2,23 @@ RESTFUL ACTIONS
 -This is good to know is a possibility when Rails seems to restrict or confine
 -add more restful actions
 -not confined to the 7 routes that is created by default
--add additional routes applying to collection or individual memmbers of collection
+-add additional routes applying to collection or individual members of collection
+eg:
+  1.resources :schools do
+      member do
+        get 'preview'
+      end
+    end
+  2. rake routes
+  3.    Prefix Verb   URI Pattern                    Controller#Action
+preview_school GET    /schools/:id/preview(.:format) schools#preview    *added preview route*
+       schools GET    /schools(.:format)             schools#index      *below are the 7 routes*
+               POST   /schools(.:format)             schools#create
+
+-It directs to the correct controller with it's respective action
+-it's routing, passing the params and giving it to the same controller of member parent
+
+-Same but different format
+resources :schools do
+  get 'preview', on: :member
+end
