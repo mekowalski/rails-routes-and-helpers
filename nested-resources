@@ -59,3 +59,23 @@ new_school_teacher GET    /schools/:school_id/teachers/new(.:format) teachers#ne
                    PUT    /teachers/:id(.:format)                    teachers#update
                    DELETE /teachers/:id(.:format)                    teachers#destroy
     *some nested and some shallow nested*
+
+-Can specify `shallow:` on the parent and the child of a resources to create another shallow nesting
+
+
+ROUTING CONCERNS
+  -declare common routes that can be reused inside other resources and routes
+  eg:
+    1.concern :commentable do
+        resources :comments
+      end
+
+  -also used in resources to avoid duplication & share behavior across routes
+    2.
+    resources :messages, concerns: :commentable
+
+    3. rake routes
+    4.
+                  Prefix Verb   URI Pattern                                         Controller#Action
+    edit_message_comment GET    /messages/:message_id/comments/:id/edit(.:format)   comments#edit
+            edit_message GET    /messages/:id/edit(.:format)                        messages#edit
