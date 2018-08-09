@@ -41,3 +41,14 @@ search_schools GET    /schools/search(.:format)   schools#search    *added searc
 resources :schools do
   get 'search', on: :collection
 end
+
+
+ANOTHER ADDITIONAL ROUTE
+resources :schools do
+  get 'preview', on: :new
+end
+
+-allows rails to recognize a path with a GET verb for the URI Pattern of specified route
+-creates route helpers 
+            Prefix Verb   URI Pattern                    Controller#Action
+preview_new_school GET    /schools/new/preview(.:format) schools#preview

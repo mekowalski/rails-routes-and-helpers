@@ -48,7 +48,11 @@ Rails.application.routes.draw do
   # end
 
   #same just trimmed
+  # resources :schools do
+  #   get 'search', on: :collection
+  # end
+
   resources :schools do
-    get 'search', on: :collection
+    get 'preview', on: :new
   end
 end
