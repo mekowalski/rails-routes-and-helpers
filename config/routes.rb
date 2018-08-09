@@ -28,15 +28,23 @@ Rails.application.routes.draw do
 
 
   #RESTFUL ACTIONS
-  resources :schools do
-    member do
-      get 'preview'
-    end
-  end
+  # resources :schools do
+  #   member do
+  #     get 'preview'
+  #   end
+  # end
 
   #same but different format
   # resources :schools do
   #   get 'preview', on: :member
   # end
+
+
+  #ADD ROUTE TO COLLECTION
+  resources :schools do
+    collection do
+      get 'search'
+    end
+  end
 
 end

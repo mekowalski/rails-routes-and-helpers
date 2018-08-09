@@ -22,3 +22,17 @@ preview_school GET    /schools/:id/preview(.:format) schools#preview    *added p
 resources :schools do
   get 'preview', on: :member
 end
+
+
+ADD ROUTE TO COLLECTION
+-Enable Rails to recognize paths such as the specified URI Pattern route added to collection
+1.resources :schools do
+    collection do
+      get 'search'
+    end
+  end
+2. rake routes
+3.      Prefix Verb   URI Pattern                 Controller#Action
+search_schools GET    /schools/search(.:format)   schools#search    *added search route*
+       schools GET    /schools(.:format)          schools#index     *below are the 7 routes*
+               POST   /schools(.:format)          schools#create
